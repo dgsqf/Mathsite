@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+      <style>
+      [v-cloak]{
+        display:none
+      }
+      </style>
+    <title>Vite App</title>
+  </head>
+  <body>
+
+    <script type="module" src="/src/main.js"></script>
+
+    <div class="" id="app" v-cloak>
+      <div class='notification container has-text-centered'>
+        {{message}}
+      </div>
+      <div class='box'>
+        <h2 class="title">Answer</h2>
+        <input type="text" id='answer' class='input'>
+        <button v-on:click="click" class='button is-primary mt-3' > Submit response</button>
+        <button v-on:click="next" class='button is-primary ml-3 mt-3' > Next Problem</button>
+
+      </div>
+
+      <div v-if='boolean==true' >
+        <div class="notification is-primary m-2 mx-3 px-1">
+          <div class="block">
+            your response was {{boolean}}
+          </div>
+          <div class="block">
+            {{explication}}
+          </div>
+        </div>
+        </div>
+
+
+      <div v-if='boolean==false' >
+        <div class="notification is-danger m-2 mx-3 ">
+          <div class="block">
+            your response was {{boolean}}
+          </div>
+          <div class="block">
+            {{explication}}
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+  </body>
+</html>
